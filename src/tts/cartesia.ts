@@ -40,7 +40,6 @@ async function generateSpeech(transcript: string, voiceId: string, outputFilePat
         });
 
         await fs.writeFile(outputFilePath, new Uint8Array(response));
-        console.log(`Successfully generated speech for "${transcript.slice(0, 10)}" to ${outputFilePath}`);
     } catch (err) {
         if (err instanceof CartesiaError) {
             console.error(`Error generating speech: ${err.message}`);
