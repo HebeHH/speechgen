@@ -23,7 +23,7 @@ export const script: Script = [
     },
     {
         text: "Notice how your breath moves your body - the rise and fall of your belly, the expansion of your ribcage, the subtle movement in your shoulders.",
-        pauseAfter: 45,
+        pauseAfter: 25,
     },
     {
         text: "Now, focus on lengthening your breath.",
@@ -47,7 +47,7 @@ export const script: Script = [
     },
     {
         text: "Continue this rhythm - inhale four, hold two, exhale six, hold two.",
-        pauseAfter: 60,
+        pauseAfter: 30,
     },
     {
         text: "Let your breath return to its natural rhythm.",
@@ -67,7 +67,7 @@ export const script: Script = [
     },
     {
         text: "Let this wave wash over you again and again, from the crown of your head to the tips of your toes.",
-        pauseAfter: 60,
+        pauseAfter: 30,
     },
     {
         text: "Feel your entire body resting in space.",
@@ -79,7 +79,7 @@ export const script: Script = [
     },
     {
         text: "Feel the weight of gravity drawing you downward, anchoring you to the earth.",
-        pauseAfter: 30,
+        pauseAfter: 20,
     },
     {
         text: "We'll now begin our first body scan. Bring your awareness to the top of your head. Notice any sensations in your scalp - perhaps tingling, warmth, or pressure. There's no need to change anything, simply observe the sensations present.",
@@ -123,7 +123,7 @@ export const script: Script = [
     },
     {
         text: "Feel your entire face becoming peaceful and serene.",
-        pauseAfter: 45,
+        pauseAfter: 15,
     },
     {
         text: "Bring your attention to your neck and throat. Notice the front of your throat, the movement of swallowing, the passage of breath.",
@@ -155,7 +155,47 @@ export const script: Script = [
     },
     {
         text: "Notice the sensation in each finger individually.",
-        pauseAfter: 45,
+        pauseAfter: 1,
+    },
+    {
+        text: "Left Pinky finger.",
+        pauseAfter: 5,
+    },
+    {
+        text: "Left Ring finger.",
+        pauseAfter: 5,
+    },
+    {
+        text: "Left Middle finger.",
+        pauseAfter: 5,
+    },
+    {
+        text: "Left Pointer finger.",
+        pauseAfter: 5,
+    },
+    {
+        text: "Left Thumb.",
+        pauseAfter: 5,
+    },
+    {
+        text: "Right Pinky finger.",
+        pauseAfter: 5,
+    },
+    {
+        text: "Right Ring finger.",
+        pauseAfter: 5,
+    },
+    {
+        text: "Right Middle finger.",
+        pauseAfter: 5,
+    },
+    {
+        text: "Right Pointer finger.",
+        pauseAfter: 5,
+    },
+    {
+        text: "Right Thumb.",
+        pauseAfter: 5,
     },
     {
         text: "Bring your awareness to your chest and upper back. Feel the gentle rise and fall of your breath here.",
@@ -187,7 +227,7 @@ export const script: Script = [
     },
     {
         text: "Let this relaxation flow through your hips and pelvic area.",
-        pauseAfter: 45,
+        pauseAfter: 25,
     },
     {
         text: "Take a moment to feel your whole body again as one unified field of sensation.",
@@ -199,7 +239,7 @@ export const script: Script = [
     },
     {
         text: "Let your awareness float freely throughout your body.",
-        pauseAfter: 60,
+        pauseAfter: 30,
     },
     {
         text: "Now return to your breath.",
@@ -211,7 +251,7 @@ export const script: Script = [
     },
     {
         text: "Notice how your entire body participates in each breath.",
-        pauseAfter: 60,
+        pauseAfter: 30,
     },
     {
         text: "We'll now begin a second, more detailed body scan. Starting at the crown of your head, feel the skin of your scalp. Notice any tingling or pulsing sensations.",
@@ -263,7 +303,7 @@ export const script: Script = [
     },
     {
         text: "Notice your outer jaw, the angle of your jawbone, the connection to your ears.",
-        pauseAfter: 45,
+        pauseAfter: 15,
     },
     {
         text: "Bring your awareness to your right shoulder. Feel where it connects to your neck, the top of the shoulder, the shoulder blade beneath.",
@@ -379,7 +419,7 @@ export const script: Script = [
     },
     {
         text: "Continue this spiral awareness up to your shoulder, noticing how the muscles change and shift as you move upward.",
-        pauseAfter: 45,
+        pauseAfter: 25,
     },
     {
         text: "Move to your left shoulder with the same attention to detail.",
@@ -483,7 +523,7 @@ export const script: Script = [
     },
     {
         text: "Continue this spiral awareness up to your shoulder, feeling how the muscles layer and connect.",
-        pauseAfter: 45,
+        pauseAfter: 25,
     },
     {
         text: "Take a moment to feel your arms as complete units, noticing any differences between right and left sides.",
@@ -535,7 +575,7 @@ export const script: Script = [
     },
     {
         text: "Notice the external hip muscles, the tissues that support these important joints.",
-        pauseAfter: 45,
+        pauseAfter: 25,
     },
     {
         text: "Move to the back of your right leg. Start at the very top, where your hamstring connects to your sitting bone.",
@@ -639,7 +679,7 @@ export const script: Script = [
     },
     {
         text: "Feel the outer thigh muscle, the inner thigh muscles, the complete cylinder of your thigh.",
-        pauseAfter: 45,
+        pauseAfter: 25,
     },
     {
         text: "Bring your awareness to the back of your left leg. Just as with the right side, start where your hamstring connects to your sitting bone.",
@@ -715,7 +755,7 @@ export const script: Script = [
     },
     {
         text: "Notice your outer thigh, your inner thigh muscles, the complete structure of your thigh.",
-        pauseAfter: 45,
+        pauseAfter: 25,
     },
     {
         text: "Take a moment to feel both legs as complete units. Notice any differences between right and left sides.",
@@ -775,7 +815,7 @@ export const script: Script = [
     },
     {
         text: "Experience the back of your throat, its connection to your spine.",
-        pauseAfter: 45,
+        pauseAfter: 25,
     },
     {
         text: "Now let your awareness expand to include your entire body once again.",
@@ -791,7 +831,7 @@ export const script: Script = [
     },
     {
         text: "Feel the continuous flow of breath moving through your body, the subtle pulse of life in every cell.",
-        pauseAfter: 60,
+        pauseAfter: 30,
     },
     {
         text: "Let your awareness expand even further to include the space around your body.",
