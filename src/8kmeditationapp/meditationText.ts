@@ -2,7 +2,7 @@ import type { Script } from "../types/script";
 
 export const script: Script = [
     {
-        text: "Welcome to this yoga nidra body scan meditation. Find a comfortable position lying down, either on your back on a yoga mat, or in your bed. Take a moment to adjust your body, ensuring your spine is straight and your limbs are relaxed. You may want to place a small pillow under your head, and cover yourself with a light blanket to stay warm during the practice.",
+        text: "Welcome to this body scan meditation. Find a comfortable position lying down, either on your back on a yoga mat, or in your bed. Take a moment to adjust your body, ensuring your spine is straight and your limbs are relaxed. You may want to place a small pillow under your head, and cover yourself with a light blanket to stay warm during the practice.",
         pauseAfter: 15,
     },
     {

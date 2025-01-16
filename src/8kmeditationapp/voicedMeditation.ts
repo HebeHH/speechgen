@@ -15,8 +15,10 @@ export async function getVoiceFiles(statements: Script, baseFolder: string) {
     });
 
     const movieManId = "c45bc5ec-dc68-4feb-8829-6e6b2748095d"
+    const readingLadyId = "15a9cd88-84b0-4a8b-95f2-5d583b54c72e"
+    const someGuy = "50d6beb4-80ea-4802-8387-6c948fe84208"
 
-    await batchProcess("50d6beb4-80ea-4802-8387-6c948fe84208", voiced, path.join(baseFolder, 'statements'));
+    await batchProcess(readingLadyId, voiced, path.join(baseFolder, 'statements'));
 
     const padFileText = voiced.map(statement => `ffmpeg -i statements/${statement.filename}  -af "apad=pad_dur=${statement.pauseAfter || 1}" -y statements/padded_${statement.filename}`)
     const concatFileText = voiced.map(statement => `file 'statements/padded_${statement.filename}'`)
