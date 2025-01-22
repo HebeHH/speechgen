@@ -4,6 +4,14 @@ import path from "path"; // Import the path module
 import type { VoicedStatement } from "../types/script";
 import cliProgress from 'cli-progress'; // Import cli-progress
 
+
+type CartesiaSpeed = "slowest" | "slow" | "normal" | "fast" | "fastest";
+type CartesiaEmotion = "anger:lowest" | "anger:low" | "anger:high" | "anger:highest" | "positivity:lowest" | "positivity:low" | "positivity:high" | "positivity:highest" | "surprise:lowest" | "surprise:high" | "surprise:highest" | "sadness:lowest" | "sadness:low" | "curiosity:low" | "curiosity:high" | "curiosity:highest";
+type CartesiaControls = {
+    speed: CartesiaSpeed;
+    emotion: CartesiaEmotion[];
+} | undefined;
+
 const apiKey = process.env.CARTESIA_API_KEY;
 
 let cartesiaClient: CartesiaClient | null = null;
@@ -21,7 +29,9 @@ function getCartesiaClient(): CartesiaClient {
 }
 
 
-async function generateSpeech(transcript: string, voiceId: string, outputFilePath: string): Promise<void> {
+// Generate speech from a transcript and save it to a file
+
+async function generateSpeech(transcript: string, voiceId: string, outputFilePath: string, controls: CartesiaControls = undefined): Promise<void> {
     const client = getCartesiaClient();
 
     try {
@@ -29,10 +39,7 @@ async function generateSpeech(transcript: string, voiceId: string, outputFilePat
             modelId: "sonic",
             voice: {
                 mode: "id", id: voiceId,
-                experimentalControls: {
-                    "speed": "slow",
-                    "emotion": []
-                }
+                experimentalControls: controls
             },
             language: "en",
             transcript,
@@ -51,7 +58,7 @@ async function generateSpeech(transcript: string, voiceId: string, outputFilePat
 }
 
 
-async function batchProcess(voiceId: string, transcripts: VoicedStatement[], folder?: string): Promise<void> {
+async function batchProcess(voiceId: string, transcripts: VoicedStatement[], folder?: string, controls: CartesiaControls = undefined): Promise<void> {
     if (folder) {
         try {
             await fs.mkdir(folder, { recursive: true });
@@ -79,7 +86,7 @@ async function batchProcess(voiceId: string, transcripts: VoicedStatement[], fol
     for (const { text, filename: relativePath } of transcripts) {
         const outputFilePath = folder ? path.join(folder, relativePath) : relativePath;
 
-        const promise = generateSpeech(text, voiceId, outputFilePath)
+        const promise = generateSpeech(text, voiceId, outputFilePath, controls)
             .then(() => {
                 processedCount++;
                 progressBar.update(processedCount); // Update the progress bar
