@@ -8,3 +8,10 @@ export type VoicedStatement = SingleStatement & {
 }
 
 export type Script = SingleStatement[];
+
+
+export type BasicStatements = {
+    text: string;
+    filename: string;
+    voiceId?: string;
+}

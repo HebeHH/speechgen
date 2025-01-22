@@ -1,7 +1,7 @@
 import { CartesiaClient, CartesiaError } from "@cartesia/cartesia-js";
 import { promises as fs } from "fs";
 import path from "path"; // Import the path module
-import type { VoicedStatement } from "../types/script";
+import type { BasicStatements, VoicedStatement } from "../types/script";
 import cliProgress from 'cli-progress'; // Import cli-progress
 
 
@@ -58,7 +58,11 @@ async function generateSpeech(transcript: string, voiceId: string, outputFilePat
 }
 
 
-async function batchProcess(voiceId: string, transcripts: VoicedStatement[], folder?: string, controls: CartesiaControls = undefined): Promise<void> {
+// Batch process a list of transcripts
+// If a folder is provided, the generated audio files will be saved in that folder
+// If controls are provided, they will be used for all transcripts
+// If a voiceId is provided for a transcript, it will be used for that specific transcript. Otherwise, the defaultVoiceId will be used.
+async function batchProcess(defaultVoiceId: string, transcripts: BasicStatements[], folder?: string, controls: CartesiaControls = undefined): Promise<void> {
     if (folder) {
         try {
             await fs.mkdir(folder, { recursive: true });
@@ -83,10 +87,10 @@ async function batchProcess(voiceId: string, transcripts: VoicedStatement[], fol
     let processedCount = 0;
     const promises: Promise<void>[] = [];
 
-    for (const { text, filename: relativePath } of transcripts) {
+    for (const { text, filename: relativePath, voiceId: lineVoiceId } of transcripts) {
         const outputFilePath = folder ? path.join(folder, relativePath) : relativePath;
 
-        const promise = generateSpeech(text, voiceId, outputFilePath, controls)
+        const promise = generateSpeech(text, lineVoiceId || defaultVoiceId, outputFilePath, controls)
             .then(() => {
                 processedCount++;
                 progressBar.update(processedCount); // Update the progress bar
