@@ -2,8 +2,10 @@ import { create } from "domain";
 import { script } from "./8kmeditationapp/meditationText";
 import { getVoiceFiles, meditationappfolder } from "./8kmeditationapp/voicedMeditation";
 import { createVoiceExamples } from "./examples/voiceExampleCreation";
+import concatenateAudioFiles from "./filemanipulation/concat";
 
 async function main() {
-    await createVoiceExamples();
+    const exs = await createVoiceExamples();
+    concatenateAudioFiles(exs, { outputPath: meditationappfolder, showProgress: true });
 }
 main()
