@@ -19,5 +19,5 @@ export async function createVoiceExamples() {
     });
 
     await batchProcess(voices[0].id, transcripts, voiceExampleCreationFolder);
-
+    return transcripts.map(t => path.join(voiceExampleCreationFolder, t.filename));
 }
